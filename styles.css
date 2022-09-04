@@ -1,0 +1,84 @@
+body {
+    /* background: url("assets/lotto-balls.jpg")  no-repeat fixed 0 0 / cover; */
+    background: url("assets/lotto2.jpg")  no-repeat fixed 0 0 / cover;
+    /* font-family: 'Lato', sans-serif; */
+    /* color: rgb(211, 207, 207); */
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    /* color: white; */
+    /* margin-top: 100px; */
+    margin-top: 45px;
+    /* margin-bottom: 20px; */
+    padding-bottom: 45px;
+}
+
+h3 {
+    /* color: white; */
+    padding-bottom: 45px;
+} 
+
+.buttonBar {
+    padding-bottom: 45px;
+}
+
+#mainButton {
+    color: #9ac4cb;
+    /* background: #172a32; */
+}
+
+.ballHeading {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#bonus {
+    padding-bottom: 45px;
+}
+
+/* p {
+    font-size: 18px;
+} */
+
+/* hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    width: 50px;
+    border-top: 2px solid #ccc;
+    margin: 20px auto 25px auto;
+} */
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* background: rgba(0,0,0,.3); */
+    /* background: radial-gradient(circle at 100px 100px, #5cabff, #000); */
+    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    font-size: 24px;
+    /* color: white; */
+    line-height: 118px;
+    text-align: center;
+    /* border: 2px solid white; */
+}
+
+a {
+    color: white;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* background: linear-gradient(#0e666a, #32989a, #0e666a,); */
+    background: linear-gradient(to right, #0e666a, #32989a, #32989a, #0e666a);
+    /* color: #0e666a;
+    color: #32989a; */
+    text-align: center;
+    font-size: 10px;
+}
