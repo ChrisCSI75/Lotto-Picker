@@ -82,7 +82,7 @@ function lottoPicker(game) {
     }
 
     let arr = [];
-    while(arr.length < 6){
+    while(arr.length < 5){
         let r = Math.floor(Math.random() * maxNum) + 1;
         if(arr.indexOf(r) === -1) arr.push(r);
         let add = true;
@@ -116,7 +116,7 @@ function lottoPicker(game) {
     });
 
     let bonusArr = [];
-    while(bonusArr.length < 2){
+    while(bonusArr.length < 1){
         let r = Math.floor(Math.random() * maxBonus) + 1;
         if(bonusArr.indexOf(r) === -1) bonusArr.push(r);
         let add = true;
