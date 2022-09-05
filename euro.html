@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Picker</title>
+    <title>Lotto Picker - Euromillions game</title>
 
     <!-- BOOTSTRAP - JavaScript Bundle with Popper -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -19,20 +19,11 @@
 
         <h1 class="mb-2 light text-center">Lotto Number Picker</h1>
         <!-- <hr> -->
-        <h3>Click below to create your Lotto numbers!</h3>
-
-        <form action="">
-            <input type="radio" id="setForLife" name="gameType" value="Set for Life">
-            <label for="setForLife">Set For Life</label><br>
-            <input type="radio" id="lotto" name="gameType" value="Lotto">
-            <label for="lotto">Lotto</label><br>
-            <input type="radio" id="euroMillions" name="gameType" value="Euro Millions">
-            <label for="euroMillions">Euro Millions</label>
-        </form>
+        <h3>Click below to create your EuroMillions numbers!</h3>
 
         <!-- <div class="row justify-content-center mt-4 mb-4"> -->
         <div class="buttonBar">
-            <button type="button" class="btn btn-dark btn-lg" id="mainButton">Select Game</button>
+            <button type="button" class="btn btn-dark btn-lg" id="gameButton" onclick="lottoPicker('euro')">Create Your Numbers</button>
         </div>
 
         <div class="row justify-content-center" id="lotto">

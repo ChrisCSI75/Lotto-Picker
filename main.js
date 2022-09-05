@@ -1,4 +1,55 @@
-function lottoPicker() {
+const btn = document.querySelector('#mainButton');        
+const radioButtons = document.querySelectorAll('input[name="gameType"]');
+btn.addEventListener("click", () => {
+    let selectedGame;
+    for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
+            selectedGame = radioButton.value;
+            break;
+        }
+    }
+    // show the output:
+    console.log(selectedGame);
+    // alert(selectedGame);
+
+    //select the game page to show
+    if (selectedGame == "Lotto") {
+        document.location.href = "lotto.html";
+    } else if (selectedGame == "Set for Life") {
+        document.location.href = "setForLife.html";
+    } else if (selectedGame == "Euro Millions") {
+        document.location.href = "euro.html";
+    } else {
+        alert("Please select a game type to proceed")
+    }
+});
+
+
+
+// function gamePicker() {
+//   var game = "";
+//   var selectionCheck = document.getElementsByName("gameType");
+
+//     for (var i = 0; i < gameType.length; i++) {
+//         if (selectionCheck[i].checked == true) {
+//         game = selectionCheck[i].value;
+//         break;
+//         }
+
+//         if (game == 'Set for Life') {
+//             alert ("Set for Life");
+//         } 
+//         else {
+//             alert ("Lotto");
+//         }
+//     }
+
+//     console.log(game);
+// }
+
+
+function lottoPicker(game) {
+    var choice = game;
 
     // check if circle element exists, and delete it if it does
     // prevent duplicate lotto number circles from popping up
@@ -12,15 +63,33 @@ function lottoPicker() {
         removeElements( document.querySelectorAll(".ballHeading") );
     }
 
+    var maxNum = 1;
+    var maxBonus = 1;
+
+    console.log(maxNum);
+    console.log(maxBonus);
+    console.log(choice);
+
+    if (choice == "lotto") {
+        maxNum = 49;
+        maxBonus = 12;
+    } else if (choice == "euro") {
+        maxNum = 58;
+        maxBonus = 18
+    } else if (choice =="life") {
+        maxNum = 45;
+        maxBonus = 10;
+    }
+
     let arr = [];
     while(arr.length < 6){
-        let r = Math.floor(Math.random() * 45) + 1;
+        let r = Math.floor(Math.random() * maxNum) + 1;
         if(arr.indexOf(r) === -1) arr.push(r);
         let add = true;
 
         // looks for duplicate numbers
         // if duplicate exists it does not add it to the array
-        for(let y = 0; y < 45; y++) {
+        for(let y = 0; y < maxNum; y++) {
             if(arr[y] == arr) {
                 add = false;
             }
@@ -48,13 +117,13 @@ function lottoPicker() {
 
     let bonusArr = [];
     while(bonusArr.length < 2){
-        let r = Math.floor(Math.random() * 12) + 1;
+        let r = Math.floor(Math.random() * maxBonus) + 1;
         if(bonusArr.indexOf(r) === -1) bonusArr.push(r);
         let add = true;
 
         // looks for duplicate numbers
         // if duplicate exists it does not add it to the array
-        for(let y = 0; y < 12; y++) {
+        for(let y = 0; y < maxBonus; y++) {
             if(bonusArr[y] == bonusArr) {
                 add = false;
             }
@@ -82,5 +151,7 @@ function lottoPicker() {
 
     console.log(sorted);
     console.log(bonusSorted);
+    console.log(maxNum);
+    console.log(maxBonus);
     console.log("finished");
 }
