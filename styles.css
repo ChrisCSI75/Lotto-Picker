@@ -58,12 +58,18 @@ h3 {
     border-radius: 50%;
     /* background: rgba(0,0,0,.3); */
     /* background: radial-gradient(circle at 100px 100px, #5cabff, #000); */
-    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    /* background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%); */
     font-size: 24px;
     /* color: white; */
     line-height: 118px;
     text-align: center;
     /* border: 2px solid white; */
+    background-color: #3b4ba3;
+    box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+    background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+    background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);  
+    background-image: -o-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+    background-image: -ms-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
 }
 
 a {

@@ -25,29 +25,6 @@ btn.addEventListener("click", () => {
 });
 
 
-
-// function gamePicker() {
-//   var game = "";
-//   var selectionCheck = document.getElementsByName("gameType");
-
-//     for (var i = 0; i < gameType.length; i++) {
-//         if (selectionCheck[i].checked == true) {
-//         game = selectionCheck[i].value;
-//         break;
-//         }
-
-//         if (game == 'Set for Life') {
-//             alert ("Set for Life");
-//         } 
-//         else {
-//             alert ("Lotto");
-//         }
-//     }
-
-//     console.log(game);
-// }
-
-
 function lottoPicker(game) {
     var choice = game;
 
@@ -65,24 +42,32 @@ function lottoPicker(game) {
 
     var maxNum = 1;
     var maxBonus = 1;
+    var mainNums = 0;
+    var bonusNums = 0;
 
-    console.log(maxNum);
-    console.log(maxBonus);
-    console.log(choice);
+    // console.log(maxNum);
+    // console.log(maxBonus);
+    // console.log(choice);
 
     if (choice == "lotto") {
         maxNum = 49;
         maxBonus = 12;
+        mainNums = 6;
+        bonusNums = 0;
     } else if (choice == "euro") {
         maxNum = 58;
         maxBonus = 18
+        mainNums = 5;
+        bonusNums = 2;
     } else if (choice =="life") {
         maxNum = 45;
         maxBonus = 10;
+        mainNums = 5;
+        bonusNums = 1;
     }
 
     let arr = [];
-    while(arr.length < 5){
+    while(arr.length < mainNums){
         let r = Math.floor(Math.random() * maxNum) + 1;
         if(arr.indexOf(r) === -1) arr.push(r);
         let add = true;
@@ -116,7 +101,7 @@ function lottoPicker(game) {
     });
 
     let bonusArr = [];
-    while(bonusArr.length < 1){
+    while(bonusArr.length < bonusNums){
         let r = Math.floor(Math.random() * maxBonus) + 1;
         if(bonusArr.indexOf(r) === -1) bonusArr.push(r);
         let add = true;
@@ -130,28 +115,30 @@ function lottoPicker(game) {
         }
     }
 
-    let newHeading2 = document.createElement("span");
-    newHeading2.setAttribute('class', 'ballHeading');
-    newHeading2.textContent="Bonus Numbers";
-    bonus.append(newHeading2);    
+    if (choice != "lotto") {
+        let newHeading2 = document.createElement("span");
+        newHeading2.setAttribute('class', 'ballHeading');
+        newHeading2.textContent="Bonus Numbers";
+        bonus.append(newHeading2);    
 
-    //sorts array by ascending order and adds it into new array
-    const bonusSorted = [...bonusArr].sort((a,b)=>a-b);
+        //sorts array by ascending order and adds it into new array
+        const bonusSorted = [...bonusArr].sort((a,b)=>a-b);
 
-    // for each element of array it adds it creates an element
-    // and adds the class circle to each each
-    // and then appends it to the lotto element
-    bonusSorted.forEach(function (content) {
-        let bonus = document.getElementById("bonus");
-        let circle = document.createElement('span');
-        circle.setAttribute('class', 'circle m-3');
-        circle.textContent = content;
-        bonus.append(circle);
-    });
+        // for each element of array it adds it creates an element
+        // and adds the class circle to each each
+        // and then appends it to the lotto element
+        bonusSorted.forEach(function (content) {
+            let bonus = document.getElementById("bonus");
+            let circle = document.createElement('span');
+            circle.setAttribute('class', 'circle m-3');
+            circle.textContent = content;
+            bonus.append(circle);
+        });
+    }
 
-    console.log(sorted);
-    console.log(bonusSorted);
-    console.log(maxNum);
-    console.log(maxBonus);
+    // console.log(sorted);
+    // console.log(bonusSorted);
+    // console.log(maxNum);
+    // console.log(maxBonus);
     console.log("finished");
 }
