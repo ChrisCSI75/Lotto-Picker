@@ -60,7 +60,7 @@ function lottoPicker(game) {
         mainNums = 5;
         bonusNums = 2;
     } else if (choice =="life") {
-        maxNum = 45;
+        maxNum = 47;
         maxBonus = 10;
         mainNums = 5;
         bonusNums = 1;
