@@ -40,8 +40,8 @@ function lottoPicker(game) {
         removeElements( document.querySelectorAll(".ballHeading") );
     }
 
-    var maxNum = 1;
-    var maxBonus = 1;
+    var maxNum = 0;
+    var maxBonus = 0;
     var mainNums = 0;
     var bonusNums = 0;
 
@@ -50,13 +50,13 @@ function lottoPicker(game) {
     // console.log(choice);
 
     if (choice == "lotto") {
-        maxNum = 49;
-        maxBonus = 12;
+        maxNum = 59;
+        maxBonus = 0;
         mainNums = 6;
         bonusNums = 0;
     } else if (choice == "euro") {
-        maxNum = 58;
-        maxBonus = 18
+        maxNum = 50;
+        maxBonus = 12
         mainNums = 5;
         bonusNums = 2;
     } else if (choice =="life") {
